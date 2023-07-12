@@ -1,0 +1,22 @@
+{
+  "todos": [
+    {
+      "txt": "Faire le ménage",
+      "cat": "Choisissez une catégorie",
+      "id": "8cecfdf4-8cbc-46b0-9f25-ee584dddb6d9",
+      "done": false
+    },
+    {
+      "txt": "Faire la vaisselle",
+      "cat": "urgent",
+      "id": "f3ec21ef-e0d3-4798-b973-eca7db968b43",
+      "done": false
+    },
+    {
+      "txt": "faire le repassage",
+      "cat": "urgent",
+      "id": "4202696b-fb31-47b8-9955-ce968db18eaa",
+      "done": false
+    }
+  ]
+}

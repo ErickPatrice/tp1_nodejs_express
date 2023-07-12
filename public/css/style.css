@@ -1,0 +1,21 @@
+body {
+  font-family: sans-serif;
+  user-select: none;
+}
+
+.todo {
+  cursor: pointer;
+}
+
+.todo.done {
+  text-decoration: line-through;
+}
+
+.todo.urgent {
+  color: darkred;
+  font-weight: bold;
+}
+
+.todo.priori {
+  color: red;
+}
