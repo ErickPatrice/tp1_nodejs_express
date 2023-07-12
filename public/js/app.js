@@ -45,7 +45,6 @@ if (location.pathname == '/todos/create') {
 
 // Instructions pour les pages users///
 
-
 if (location.pathname == '/users') {
   console.log("On est sur la page users!!")
   fetch('/api/users')
@@ -54,10 +53,29 @@ if (location.pathname == '/users') {
       document.querySelector('.users').innerHTML = `
         ${users.map(u => `
           <div
-            <p>${u.firstName} ${u.lastName}</p>
+            <p>${u.firstname} ${u.lastname}</p>
            
           </div>
         `).join('')}
       `;
     });
+  }
+
+  if (location.pathname == '/users/add') {
+    console.log("on est sur la page users/add!!");
+    const form = document.querySelector('form');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    fetch(location.href, {
+      method: 'post',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        firstname: form.firstname.value,
+        lastname: form.lastname.value
+      })
+    }).then(() => location.href = '/users');
+  });
+
+
   }

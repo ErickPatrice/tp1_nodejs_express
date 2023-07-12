@@ -2,7 +2,7 @@
 <html lang="fr">
   <head>
     <meta charset="utf-8">
-    <title>Liste des tâches</title>
+    <title>Création d'une tâche</title>
     <link rel="stylesheet" href="/css/style.css">
   </head>
 
@@ -12,12 +12,15 @@
       <div><a href="/">Accueil</a></div>
       <div><a href="/users">Liste des utilisateurs</a></div>
       <div><a href="/users/add">Ajout d'un utilisateur</a></div>
-      <div><a href="/todos">Liste des tâches</a></div>
-      <div><a href="/todos/create">Création d'une tâche</a></div>
     </nav>
 
-    <h1>Liste des tâches</h1>
-    <div class="todos"></div>
+    <h1>Ajout d'un utilisateur</h1>
+
+    <form>
+      <input type="text" placeholder="John" name="firstname">
+      <input type="text" placeholder="Adams" name="lastname">
+      <button type="submit">Créer l'utilisateur !</button>
+    </form>
 
     <script src="/js/app.js"></script>
   </body>

@@ -42,15 +42,41 @@ app.get('/api/users', (req,res) =>{
   res.json(users);
 } );
 
-// fin routing pour users//
 
+
+// route pour servir le formulaire de création d'un utilisateur
+app.get('/users/add' , (req,res) => {
+  res.sendFile(
+    resolve('public', 'usersadd.html')
+    );
+});
+
+// route pour renvoyer les données du formulaire au serveur
+app.post('/users/add', (req,res) => {
+    const newUser = req.body;
+    newUser.id = randomUUID();
+    // à la création le nombre total de tâches de l'utilisateur est nul
+    newUser.totalTodos = 0;
+    users.push(newUser);
+    updateUsersJSON();
+    res.end();
+
+})
+
+
+function updateUsersJSON() {
+  writeFileSync(
+    resolve('db', 'users.json'),
+    JSON.stringify({ users }, null, 2)
+  );
+}
+// fin routing pour users//
 
 app.get('/todos/create', (req, res) => {
   res.sendFile(
     resolve('public', 'formulaire.html')
   );
 });
-
 app.post('/todos/create', (req, res) => {
   const newTodo = req.body;
   newTodo.id = randomUUID();
