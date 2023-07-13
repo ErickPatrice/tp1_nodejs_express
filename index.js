@@ -15,15 +15,15 @@ app.use( express.json() );
 
 // ROUTING
 app.get('/', (req, res) => {
- // res.render("home.pug")
-  res.sendFile(
+  res.render("home.pug")
+  /* res.sendFile(
     resolve('public', 'home.html')
-  );
+  ); */
 });
 
 app.get('/todos', (req, res) => {
-  res.render(
-    "createtodos.pug"
+  res.sendFile(
+    resolve('public', 'todos.html')
   );
 });
 
@@ -41,6 +41,7 @@ app.get('/users', (req,res) => {
 // route pour servir le contenu de l'objet users
 app.get('/api/users', (req,res) =>{
   res.json(users);
+ //res.render("createtodos.pug");
 } );
 
 
@@ -74,9 +75,12 @@ function updateUsersJSON() {
 // fin routing pour users//
 
 app.get('/todos/create', (req, res) => {
-  res.sendFile(
-    resolve('public', 'formulaire.html')
+  res.render(
+    "createtodos.pug",[users]
   );
+  /* res.sendFile(
+    resolve('public', 'formulaire.html')
+  ); */
 });
 app.post('/todos/create', (req, res) => {
   const newTodo = req.body;
