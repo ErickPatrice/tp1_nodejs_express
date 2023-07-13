@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const { resolve } = require('path');
 const { randomUUID } = require('crypto');
 
@@ -12,6 +13,13 @@ const { users } = require ('./db/users.json');
 // CONFIGURATION DE L'APP
 app.use( express.static(resolve('public')) );
 app.use( express.json() );
+
+
+// CONFIGURATION DE PUG
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "pug");
+
+
 
 // ROUTING
 app.get('/', (req, res) => {
