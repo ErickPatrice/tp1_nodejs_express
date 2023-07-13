@@ -15,14 +15,15 @@ app.use( express.json() );
 
 // ROUTING
 app.get('/', (req, res) => {
+ // res.render("home.pug")
   res.sendFile(
     resolve('public', 'home.html')
   );
 });
 
 app.get('/todos', (req, res) => {
-  res.sendFile(
-    resolve('public', 'todos.html')
+  res.render(
+    "createtodos.pug"
   );
 });
 

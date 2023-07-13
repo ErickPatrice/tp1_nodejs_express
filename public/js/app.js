@@ -63,7 +63,22 @@ if (location.pathname == '/users') {
 
   if (location.pathname == '/users/add') {
     console.log("on est sur la page users/add!!");
-    const form = document.querySelector('form');
+    // utilisation de pug
+    
+   
+ 
+
+// Compile the source code
+ 
+
+// Render a set of data
+
+
+
+    // fin utilisation de pug
+
+
+   const form = document.querySelector('form');
 
   form.addEventListener('submit', e => {
     e.preventDefault();
