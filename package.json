@@ -4,7 +4,7 @@
   "description": "Devoir sur nodejs et express(Todolist per user)",
   "main": "index.js",
   "scripts": {
-     "start": "node index.js",
+    "start": "node index.js",
     "dev": "nodemon"
   },
   "repository": {
@@ -19,11 +19,12 @@
   "author": "erick# enounga@diginamic-formation.fr",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "pug": "^3.0.2"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
-  } ,
+  },
   "bugs": {
     "url": "https://github.com/ErickPatrice/tp1_nodejs_express/issues"
   },
